@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+
+$primary: #b1361e;
+$secondary: #edb513;
+$success: #3cb652;
+$danger: hsla(24, 77.78%, 48.00%, 1.00);
+$black: #16171b;
+$dark: #ffffff0d;
+$light: #ebebeb;
+$info: #6795de;
+
+$novice-text-color: linear-gradient(128deg, #edb513, #f5f1c9 99%);
+$zero-text-color: linear-gradient(83deg, #6795de, #a0c8eb 100%, #6795de);
+$developer-text-color: linear-gradient(130deg, #866cc7, #e9c0ff);
+$levelup-text-color: linear-gradient(132deg, #5690e7, #be87eb);
+$kata-text-color: linear-gradient(90deg, #da671b, #fff);
+$faq-text-color:  linear-gradient(76deg, #b1361e, #fff);
+$blog-text-color: linear-gradient(73deg, #fff, hsla(0, 0%, 95.3%, 0.68));
+
+$developer-linear-gradient: linear-gradient(90deg, #7223d1, #da671b);
+$kata-linear-gradient: linear-gradient(86deg, #1d1e24, #151618);
+$blog-linear-gradient: linear-gradient(90deg, #6795de, #276eb1);
+
+$faq-bg: linear-gradient(159deg, #b1361e, #7223d1);
+
+
+$font-family-sans-serif: 'Lato', sans-serif;
+
+$navbar-nav-link-padding-x: 1rem;
+// $navbar-dark-hover-color: $light;
+
+$btn-padding-x: 1.3rem;
+$btn-padding-x-lg: 4rem;
+
+$card-inner-border-radius: 0;
+$card-bg: #16171b;
+
+$input-bg: $black;
+$input-color: $light;
+$input-border-color: #ffffff0d;
+$input-focus-border-color: #ffffff0d;
+$input-focus-box-shadow: #ffffff0d;
+$input-group-addon-bg: $black;
+$input-group-addon-border-color: #ffffff0d;
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+
+*{
+    transition: all .4s linear;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+@mixin panel {
+    border-radius: 1rem;
+    width: 100%;
+}
+
+@mixin height-330{
+    height: 330px;
+}
+
+@mixin height-391 {
+    height: 391px;
+}
+
+@mixin height-516 {
+    height: 516px;
+}
+
+@mixin height-auto {
+    height: auto;
+}
+
+@mixin linear-text-color {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.nav-link{
+    color: #ffffff8c;
+}
+.nav-link:hover{
+    color: white;
+}
+
+.panel-content{
+    @include height-330();
+    @include panel();
+    background-color: $dark;
+}
+
+.floating-con{
+    width: 100%;
+
+    .floating-img{
+        @include height-330();
+        @include panel();
+        background-color: #edb513;
+        object-fit: cover;
+    }
+}
+.novice-text-color{
+    @include linear-text-color();
+    background-image: $novice-text-color;
+}
+
+.zero-container{
+
+    .zero-text-color{
+        @include linear-text-color();
+        background-image: $zero-text-color;
+    }
+
+    .zero-img{
+        @include height-330();
+        background-image: $zero-text-color;
+        border-radius: 1rem;
+        
+        img{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: top;
+            margin: 10px;
+        }
+    }
+}
+
+.levelup-container{
+
+    .levelup-img{
+        background-color: #7223d1;
+        @include height-330();
+        @include panel();
+        object-fit: cover;
+    }
+
+    .levelup-text-color{
+        @include linear-text-color();
+        background-image: $levelup-text-color;
+    }
+}
+
+.developer-container{
+    
+    .developer-text-color{
+        @include linear-text-color();
+        background-image: $developer-text-color;
+    }
+
+    .developer-img{
+        @include height-330();
+        background-image: $developer-linear-gradient;
+        border-radius: 1rem;
+        
+        img{
+            width: 245px;
+        }
+    }
+}
+
+.kata-container{
+
+    .kata-img{
+        @include height-330();
+        background-image: $kata-linear-gradient;
+        border-radius: 1rem;
+    
+        img{
+            width: 200px;
+        }
+    }
+
+    .kata-text-color{
+        @include linear-text-color();
+        background-image: $kata-text-color;
+    }
+}
+
+.faq-container{
+
+    .faq-content{
+        @include height-516();
+        border-radius: 1rem;
+        width: 100%;
+        background-image: $faq-bg;
+    }
+    
+    .faq-content-questions{
+        @include height-516();
+        border-radius: 1rem;
+        width: 100%;
+        background-color: $dark;
+    
+        .faq-text-color{
+            @include linear-text-color();
+            background-image: $faq-text-color;
+        }
+    
+        p{
+            color: #ffffffb5;
+    
+            .faq-questions{
+                width: 36px;
+                aspect-ratio: 1/1;
+                border-radius: 50%;
+                background-color: #ffffff1a;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+.count-container, .qualified-bg{
+    background-color: $dark;
+    border-radius: 1rem;
+
+    .count-text-color{
+        @include linear-text-color();
+        background-image: $developer-text-color;
+    }
+
+    .countCard-1{
+        background: linear-gradient(90deg, #8f2df0, #edb513);
+    }
+    
+    .countCard-2{
+        background: linear-gradient(90deg, #276eb1, #7223d1);
+    }
+    
+    .countCard-3{
+        background: linear-gradient(159deg, #b1361e, #7223d1);
+    }
+}
+
+.blog-container{
+
+    .blog-text-color{
+        @include linear-text-color();
+        background-image: $blog-text-color;
+    }
+
+    .blog-img{
+        @include height-391();
+
+        img{
+            object-fit: cover;
+        }
+    }
+
+    .blog-bg{
+        background-image: $blog-linear-gradient;
+
+        .blog-content{
+            @include height-391();
+            width: 100%;
+        }
+    }
+
+}
+.language-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+}
+
+.scrollUp{
+    position: fixed;
+    width: 42px;
+    aspect-ratio: 1/1;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $light;
+    cursor: pointer;
+    text-decoration: none;
+    opacity: 0;
+
+    i{
+        font-size: 1rem;
+        color: black;
+    }
+}
+.login-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.8);
+    width: 100%;
+    height: 100%;
+    z-index: 1100;
+
+    #closeLoginForm{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: $light;
+        cursor: pointer;
+        font-size: 25px;
+    }
+
+    form{
+        width: 400px;
+    }
+}
+.content {
+
+    .card{
+        background-color: $dark;
+        height: 500px;
+
+        .card-img{
+            width: 100px;
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $black;
+            border-radius: 50%;
+            padding: 1.5rem;
+        }
+
+        a{
+            width: 100%;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 992px) {
+    .panel-content{
+        @include height-auto();
+    }
+
+    .faq-container{
+        
+        .faq-content-questions{
+            @include height-auto();
+        }
+    }
+    .blog-container{
+    
+        .blog-bg{
+    
+            .blog-content{
+                @include height-auto();
+            }
+        }
+    
+    }
+    .card-img{
+        @include height-auto();
+    }
+    .python-card{
+        padding-bottom: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .login-container{
+    
+        form{
+            width: 310px;
+        }
+    }
+}
+@media screen and (max-width: 1200px) {
+    .content {
+
+        .card{
+            height: 350px;
+
+            a{
+                width: max-content;
+            }
+        }
+    }
+}
